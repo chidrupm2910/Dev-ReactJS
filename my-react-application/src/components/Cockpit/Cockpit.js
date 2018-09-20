@@ -13,6 +13,7 @@ const cockpit = (props) => {
         <Aux>
          <h1> {props.appTitle} </h1>
          <button style = {style} onClick={props.clicked}> Switch </button>
+         <button onClick = {props.login}>Log In</button>
         </Aux>
         )
     

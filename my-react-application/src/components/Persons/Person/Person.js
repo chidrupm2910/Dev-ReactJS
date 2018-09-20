@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import "./Person.css"
 import PropTypes from "prop-types";
-
+import {AuthContext} from "../../../containers/App"
 class Person extends Component {
     constructor(props){
     super(props)
@@ -18,6 +18,9 @@ class Person extends Component {
     render() {
          return (
         <div className="Person">
+        <AuthContext.Consumer>
+        {auth => auth ? <p>I  m authenticated</p> : null}
+        </AuthContext.Consumer>
         <p onClick={this.props.click}> I am a {this.props.name} and i am {this.props.age} </p>
         <p>{this.props.children}</p>
         <input 
